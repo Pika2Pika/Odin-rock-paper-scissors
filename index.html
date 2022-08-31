@@ -14,8 +14,8 @@
             //a loop that will go through and call the following 3 functions 
             let i = 0;
             while (i<5){
-                let playerChoice = playerSelection();
-                let computerChoice = computerSelection();
+                let playerChoice = getPlayerChoice();
+                let computerChoice = getComputerChoice();
                 playRound(playerChoice, computerChoice);
                 i++;
             }
@@ -57,7 +57,7 @@
         function getComputerChoice(){
             //select rock paper or scissors 
             //return the string selection 
-            let x = math.floor(math.random()*3+1 );
+            let x = Math.floor(Math.random()*3+1 );
             //*3+1 works because .random returns a num between 0-1 and .floor returns 
             //the int part so if it got a low rand *3 it wouldn't be 1 so it makes it a minimum of 1
             if (x === 1){
