@@ -1,0 +1,28 @@
+.header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+    background-color: #8e9b90;
+    color:white;
+}
+body{
+    margin:0;
+    font-family: 'IBM Plex Mono', monospace;
+}
+.mainBox{
+    display:flex;
+}
+.scoreBox{
+    display: flex;
+}
+.playerScore{}
+.compScore{}
+.playBox{}
+.footer{ display:flex;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+    background-color: #8e9b90;
+    color:white;
+}}
