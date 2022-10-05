@@ -1,0 +1,77 @@
+
+        //main function call that will call other functions 
+        function game(){
+            //a loop that will go through and call the following 3 functions 
+            let i = 0;
+            while (i<5){
+                let playerChoice = getPlayerChoice();
+                let computerChoice = getComputerChoice();
+                playRound(playerChoice, computerChoice);
+                i++;
+            }
+        }
+        //compares the two choices and declares a winner
+        function playRound(playerSelection, computerSelection){
+            //if equal- tie 
+            //nested condtions thats like the first one is
+            if (playerSelection === "rock"){
+                if(computerSelection === "paper"){
+                    //i know this can be done with template literals and would be more agile but doesn't need to be
+                    console.log("Player loses rock loses to paper");
+                }else if (computerSelection === "scissors"){
+                    console.log("Player wins rock beats scissors");
+                }else{
+                    console.log("tie rock ties with rock");
+                }
+            }
+            else if (playerSelection === "paper"){
+                if (computerSelection === "scissors"){
+                    console.log("Player loses paper loses to scissors");
+                }else if (computerSelection === "rock"){
+                    console.log("Player wins paper beats rock");
+                }else{
+                    console.log("tie paper ties with paper");
+                }
+            }else{
+                //player selection must be scissors now 
+                if (computerSelection === "rock"){
+                    console.log("Player loses scissors loses to rock");
+                }else if (computerSelection === "paper") {
+                    console.log("Player wins scissors beats paper");
+                }else{
+                    console.log("tie scissors ties with scissors");
+                }
+            }
+        }
+        //randomly selects rock/paper/scissors for computer
+        function getComputerChoice(){
+            //select rock paper or scissors 
+            //return the string selection 
+            let x = Math.floor(Math.random()*3+1 );
+            //*3+1 works because .random returns a num between 0-1 and .floor returns 
+            //the int part so if it got a low rand *3 it wouldn't be 1 so it makes it a minimum of 1
+            if (x === 1){
+                choice = "rock";
+                return choice;
+            }else if (x === 2){
+                choice = "paper";
+                return choice;
+            }else{
+                choice = "scissors";
+                return choice;
+
+            }
+            
+        }
+        //prompts user for choice selection 
+        function getPlayerChoice(){
+            //prompt user for a case insenstive string, assumed would always be spelt 
+            //correctly and what not
+            //standardize the case for compairson in playround
+            //return string  in player selection var for playRound func 
+            let choice = prompt("Rock, Paper, or Scissors");
+            choice = choice.toLocaleLowerCase().trim();
+            return choice;
+        }
+
+   
